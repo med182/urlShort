@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+	<h1>Please enter your Url to make it shorter !</h1>
+	{{form_start(form , {'attr' : {'novalidate': 'novalidate'}})}}
+	{{form_widget(form.original)}}
+
+	{% for error in form.original.vars.errors %}
+		<div class="error-message">
+			{{ error.message}}
+		</div>
+	{% endfor %}
+
+
+	{{form_end(form)}}
+{% endblock %}
