@@ -18,7 +18,7 @@ class Url
     private ?int $id = null;
 
     #[ORM\Column(length: 255, unique: true)]
-    #[Assert\NotBlank(message: 'You nees to enter an URL')]
+    #[Assert\NotBlank(message: 'You need to enter an URL')]
     #[Assert\Url(message: 'The Url entered is invalid.')]
     private ?string $original = null;
 

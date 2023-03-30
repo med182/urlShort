@@ -2,7 +2,7 @@
 
 namespace App\EntityListener;
 
-use Utils\Str\Str;
+use App\Utils\Str;
 use App\Entity\Url;
 use Doctrine\ORM\Events;
 

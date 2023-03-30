@@ -43,7 +43,7 @@ class UrlsController extends AbstractController
                 $em->flush();
             }
 
-            return $this->render('urls/preview.html.twig', ['shortened' => $url->getShortened()]);
+            return $this->redirectToRoute('app_urls_preview', ['shortened' => $url->getShortened()]);
         }
 
 
