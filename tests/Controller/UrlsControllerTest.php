@@ -2,6 +2,7 @@
 
 namespace App\Tests\Controller;
 
+use App\Form\UrlFormType;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class UrlsControllerTest extends WebTestCase
@@ -24,7 +25,8 @@ class UrlsControllerTest extends WebTestCase
         $crawler =  $client->request('GET', '/');
 
         $this->assertResponseIsSuccessful();
-        $client->submitForm('Shorten URL', ['url_form[original]' => 'https://yahoo.fr']);
+        $form = $crawler->filter('form')->form();
+        $client->submit($form, ['url_form[original]' => 'https://yahoo.fr']);
 
         $this->assertResponseRedirects();
     }

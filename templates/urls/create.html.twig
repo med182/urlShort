@@ -6,7 +6,7 @@
 	<h1>Please enter your Url to make it shorter!</h1>
 	{{form_start(form , {'attr' : {'novalidate': 'novalidate'}})}}
 	{{form_widget(form.original)}}
-	<input type="submit" value="Shorten URL">
+
 
 	{% for error in form.original.vars.errors %}
 		<div class="error-message">
